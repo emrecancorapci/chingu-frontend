@@ -1,0 +1,50 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2024": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": ["./tsconfig.json", "./tsconfig.node.json"],
+    "tsconfigRootDir": "./"
+  },
+  "plugins": [
+    "promise", // NOT ready for flat config yet: https://github.com/eslint-community/eslint-plugin-promise/issues/449
+    "eslint-plugin-react-compiler",
+    "react-hook-form", // NOT ready for flat config (and won't be for a while)
+    "react-perf", // NOT ready for flat config (and won't be for a while)
+    "react-refresh", // Ready for flat config
+    "regexp", // Ready for flat config
+    "simple-import-sort", // Ready for flat config
+    "tailwindcss" // NOT ready for flat config yet: https://github.com/francoismassart/eslint-plugin-tailwindcss/issues/335
+  ],
+  "extends": [
+    "plugin:n/recommended",
+    "plugin:promise/recommended", 
+    "plugin:react-hook-form/recommended",
+    "plugin:react-perf/recommended",
+    "plugin:regexp/recommended",
+    "plugin:security/recommended-legacy",
+    "plugin:tailwindcss/recommended"
+  ],
+  "rules": {
+    "n/no-missing-import": "off",
+    "promise/always-return": "off",
+    "react-compiler/react-compiler": "error",
+    "react-perf/jsx-no-new-function-as-prop": "off",
+    "react-refresh/only-export-components": [
+      "warn",
+      { "allowConstantExport": true }
+    ],
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error"
+  }
+}
