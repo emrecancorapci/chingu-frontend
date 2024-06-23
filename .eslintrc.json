@@ -27,6 +27,7 @@
     "tailwindcss" // NOT ready for flat config yet: https://github.com/francoismassart/eslint-plugin-tailwindcss/issues/335
   ],
   "extends": [
+    "plugin:@tanstack/eslint-plugin-query/recommended",
     "plugin:n/recommended",
     "plugin:promise/recommended", 
     "plugin:react-hook-form/recommended",
